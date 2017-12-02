@@ -1,5 +1,11 @@
 {
-  "presets": ["env"],
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 3 versions", "safari >= 7"]
+      }
+    }]
+  ],
   "plugins": [
     "syntax-object-rest-spread",
     "transform-object-rest-spread"

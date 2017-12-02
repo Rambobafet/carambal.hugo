@@ -1,9 +1,16 @@
 env:
   browser: true
+  es6: true
+  jquery: true
 
 parser: babel-eslint
 
-plugins: [ "import" ]
+plugins: [
+"import",
+"jquery"
+]
+
+extends: "airbnb-base"
 
 rules:
   # Possible Errors
@@ -41,7 +48,7 @@ rules:
   new-parens: 2
   no-mixed-spaces-and-tabs: 2
   no-multiple-empty-lines: [2, {max: 2}]
-  no-trailing-spaces: 2
+  no-trailing-spaces: [2, {"skipBlankLines": true}]
   object-curly-spacing: [2, "never"]
   quotes: [2, "double", "avoid-escape"]
   semi: 2
@@ -81,5 +88,3 @@ globals:
   process: true
   ENV: true
   module: true
-
-extends: "airbnb-base"

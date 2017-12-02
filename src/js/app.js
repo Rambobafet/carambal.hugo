@@ -1,4 +1,3 @@
-// JS Goes here - ES6 supported
+import Inputs from "./input";
 
-// Say hello
-console.log("🦊 Hello! Edit me in src/js/app.js");
+Inputs.initInputs();
