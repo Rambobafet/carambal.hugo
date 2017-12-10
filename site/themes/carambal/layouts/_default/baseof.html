@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ $.Site.Language.Lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <base href="{{ $.Site.BaseURL }}">
+    <title>{{ .Title }} – {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="./vendor/jquery.js"></script>
+</head>
+<body>
+
+{{ block "header" . }}
+    {{ partial "header" . }}
+{{end}}
+
+{{ block "main" . }}
+
+{{end}}
+
+{{ block "newsletter" . }}
+    {{ partial "newsletterBar" . }}
+{{end}}
+
+{{ block "footer" . }}
+    {{ partial "footer" . }}
+{{end}}
+
+
+<script src="app.js"></script>
+</body>
+</html>
