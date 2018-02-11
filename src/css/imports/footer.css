@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   background: var(--redCarambalColor);
-  justify-content: center;
+  justify-content: space-between;
   padding: 20px 40px;
   color: #fff;
   font-size: 1.4rem;
@@ -21,7 +21,7 @@
 }
 
 .footer_itemWrapper {
-  margin: 0 20px;
+  margin: 0;
   max-width: 30%;
 }
 
