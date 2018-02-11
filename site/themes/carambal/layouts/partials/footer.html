@@ -36,48 +36,11 @@
 <section class="footer_itemWrapper footer_itemWrapper--articles">
     <h3 class="footer_subTitle">Articles récents</h3>
     <ul class="footer_list footer_list--article">
+        {{ range first 3 (where .Data.Pages "Section" "blog") }}
         <li class="footer_listItem footer_listItem--article">
-            <article class="footer_article">
-                <a class="footer_link footer_link--article" href="/">
-                    <img class="footer_ArticleImage" alt="" src="http://www-test.carambal.fr/wp-content/uploads/2017/06/sddefault-150x150.jpg">
-                    <div class="footer_articleContent">
-                        <h4 class="footer_articleTitle">
-                            Table ronde : Les bals, d’hier à aujourd’hui.
-                        </h4>
-                        <p>Pour ses 40 ans d’existence, le Festival d’Ile de France a organisé plusieurs événements,
-                            dont…</p>
-                    </div>
-                </a>
-            </article>
+            {{ partial "blog/post_summary.html" (dict "location" "footer" "heading" 4 "dot" . ) }}
         </li>
-        <li class="footer_listItem footer_listItem--article">
-            <article class="footer_article">
-                <a class="footer_link footer_link--article" href="/">
-                    <img class="footer_ArticleImage" alt="" src="http://www-test.carambal.fr/wp-content/uploads/2017/06/sddefault-150x150.jpg">
-                    <div class="footer_articleContent">
-                        <h4 class="footer_articleTitle">
-                            Table ronde : Les bals, d’hier à aujourd’hui.
-                        </h4>
-                        <p>Pour ses 40 ans d’existence, le Festival d’Ile de France a organisé plusieurs événements,
-                            dont…</p>
-                    </div>
-                </a>
-            </article>
-        </li>
-        <li class="footer_listItem footer_listItem--article">
-            <article class="footer_article">
-                <a class="footer_link footer_link--article" href="/">
-                    <img class="footer_ArticleImage" alt="" src="http://www-test.carambal.fr/wp-content/uploads/2017/06/sddefault-150x150.jpg">
-                    <div class="footer_articleContent">
-                        <h4 class="footer_articleTitle">
-                            Table ronde : Les bals, d’hier à aujourd’hui.
-                        </h4>
-                        <p>Pour ses 40 ans d’existence, le Festival d’Ile de France a organisé plusieurs événements,
-                            dont…</p>
-                    </div>
-                </a>
-            </article>
-        </li>
+        {{ end }}
     </ul>
 
 </section>

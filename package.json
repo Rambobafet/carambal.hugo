@@ -15,7 +15,7 @@
   "license": "MIT",
   "browserslist": "last 3 versions",
   "dependencies": {
-    "hugo-bin": "^0.13.0",
+    "hugo-bin": "^0.22.0",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {

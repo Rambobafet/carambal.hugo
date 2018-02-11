@@ -66,7 +66,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 70%;
+    width: 30%;
     border-bottom: 1px solid #fff;
     bottom: 10px;
   }
@@ -74,27 +74,8 @@
 
 .footer_link {
   line-height: 2;
-
-  &--article {
-    line-height: 1.2;
-    display: flex;
-    flex-wrap: nowrap;
-  }
 }
 
-.footer_ArticleImage{
-  display: block;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  justify-content: center;
-  align-self: center;
-  margin-right: 20px;
-}
-
-.footer_articleTitle {
-  margin-bottom: 0;
-}
 
 .footer_famdt{
   display: flex;

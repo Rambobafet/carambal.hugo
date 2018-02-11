@@ -8,3 +8,8 @@ theme = "Carambal"
 # See configuration options for more details: 
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+# Custom params
+[Params]
+twitter = "carambal"
+facebook = "carambal.fr"
