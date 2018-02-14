@@ -21,8 +21,13 @@ https://github.com/alsacreations/KNACSS/blob/master/doc/09-misc.md
 }
 
 .header {
-  position: relative;
   border-bottom: 1px solid rgba(0,0,0,.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 10;
 }
 
 .header__nav{
