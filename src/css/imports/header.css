@@ -1,0 +1,90 @@
+/*
+https://github.com/alsacreations/KNACSS/blob/master/doc/09-misc.md
+ */
+.skip_links {
+  position: absolute;
+  z-index: 2;
+}
+.skip_links a {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0.5em;
+  background: black;
+  color: white;
+  text-decoration: none;
+}
+.skip_links a:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+}
+
+.header {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 10;
+}
+
+.header__nav{
+  padding: 10px 20px;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header__home{
+  margin-right: auto;
+  right: 0;
+}
+
+.header__logo {
+  width: 70px;
+  height: 70px;
+}
+
+.header__list{
+  list-style: none;
+  margin: 0;
+}
+
+.header__item{
+  display: inline-block;
+}
+
+.header__link{
+  color: var(--redCarambalColor);
+  position: relative;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color .3s;
+
+  &.is_active,
+  &:hover,
+  &:focus,
+  &:active{
+    color: var(--FAMDTpurple);
+    &::after{
+      opacity: 1;
+    }
+  }
+
+  &::after{
+    content: "";
+    height: 2px;
+    width: 20px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: var(--FAMDTpurple);
+    opacity: 0;
+    transition: opacity .3s;
+  }
+}

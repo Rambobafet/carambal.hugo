@@ -1,0 +1,15 @@
+:root{
+  --redCarambalColor: #A0212A;
+  --lightRedCarambalColor: #a13b41;
+  --FAMDTpurple: #802748;
+  --redBrown: #B17679;
+  --redBrownLight: #ED5760;
+  --redDark: #ED5760;
+  --salmon: #ED5760;
+}
+
+@custom-media --largeScreen (width >= 1200px);
+@custom-media --landscapeOnly (width > 900px) and (width < 1200px);
+@custom-media --portraitAndBelow (width <= 900px);
+@custom-media --portraitOnly (width > 600px) and (width < 900px);
+@custom-media --mobile (width <= 600px);

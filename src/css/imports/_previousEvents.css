@@ -1,0 +1,22 @@
+.previousEvents{
+	padding: 0 40px;
+}
+
+.previousEvents__list{
+	display: flex;
+	flex-wrap: wrap;	
+	list-style: none;
+	padding: 0;
+}
+
+.previousEvents__item{
+	flex-grow: 1;
+	flex-basis: 410px;
+	height: 325px;
+	border:1px solid red;
+}
+
+.previousEvents__item--baseline{
+	flex-grow: 2;
+	flex-basis: 820px;
+}

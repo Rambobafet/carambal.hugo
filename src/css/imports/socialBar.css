@@ -1,0 +1,165 @@
+.socialBar{
+  margin-bottom: 40px;
+}
+
+.socialBar__title {
+  color: var(--redCarambalColor);
+  font-size: 2.4rem;
+  line-height: 3;
+  position: relative;
+  text-align: center;
+  font-weight: normal;
+
+  &::before {
+    content: "";
+    border-top: 3px;
+    height: 1px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--redCarambalColor);
+  }
+}
+
+.socialBar__list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.socialBar__item{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.socialBar__link {
+  display: flex;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  transition: border-radius 0.2s, transform 0.2s, border-color 0.2s;
+  text-align: center;
+  line-height: 80px;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+
+  &:hover::before,
+  &:hover::after ,
+  &:focus::before,
+  &:focus::after{
+    border-radius: 2px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    transition: border-radius 0.2s, transform 0.2s, background 0.2s;
+    border: 10px solid;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: border-radius 0.2s;
+    display: block;
+    border: 2px dashed;
+    background: transparent
+  }
+
+
+  &--facebook {
+    &::before {
+      border-color: #2b1e66;
+      background: #34298f;
+    }
+    &::after{ border-color: #433da1; }
+
+  }
+
+  &--twitter {
+    &::before {
+      border-color: #023998;
+      background: #0854b3;
+    }
+    &::after { border-color: #127bbb; }
+  }
+
+  &--youtube {
+    &::before {
+      border-color: #981102;
+      background: #b60d09;
+    }
+    &::after { border-color: #7f1002; }
+  }
+
+  &--soundcloud {
+    &::before {
+      border-color: #f7620e;
+      background: #ff8400;
+    }
+    &::after { border-color: #f5400f; }
+  }
+}
+
+.socialBar__link img {
+  width: 50px;
+  height: auto;
+  display: inline-block;
+  transition: transform 0.2s;
+  position: relative;
+  z-index: 3;
+}
+
+@media (--mobile) {
+  .socialBar__title{
+    line-height: 1.5;
+    padding-top: 15px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+  }
+
+  .socialBar__link {
+    width: 50px;
+    height: 50px;
+
+    &::before {
+      width: 70px;
+      height: 70px;
+      border: none;
+    }
+
+    &::after {
+      border: none;
+    }
+
+    & img {
+      width: 40px;
+    }
+  }
+}

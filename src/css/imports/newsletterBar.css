@@ -1,0 +1,78 @@
+@import "./root.css";
+
+
+.newsletterBar {
+  padding: 30px 40px;
+  background: var(--lightRedCarambalColor);
+  border-top: 3px solid #6d141a;
+  border-bottom: 3px solid #6d141a;
+  text-align: right;
+
+  & :any-link{
+    color: #fff;
+    font-size: 1.1rem;
+    display: inline-block;
+    margin: 0 0 0 15px;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.newsletterBar_form{
+  flex: 0 1 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.newsletterBar_title{
+  flex: 0 1 100%;
+  text-align: left;
+  color: #fff;
+}
+
+.field_wrapper{
+  flex-basis: 20%;
+  flex-grow: 1;
+  margin-right: 40px;
+
+  & input {
+    color: #fff;
+    border-color: #fff;
+  }
+
+  & label {
+    color: #fff;
+
+    &.is_active {
+      color: var(--redBrownLight);
+    }
+  }
+}
+
+.newsletterBar_submit{
+  max-width: 20%;
+  align-self: center;
+}
+
+.input_wrapper.is_active::after{
+  background-color: var(--redBrownLight)
+}
+
+@media (--portraitAndBelow) {
+  .field_wrapper,
+  .newsletterBar_submit{
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .field_wrapper:nth-child(3),
+  .newsletterBar_submit{
+    flex: 0 1 100%;
+    max-width: none;
+  }
+}

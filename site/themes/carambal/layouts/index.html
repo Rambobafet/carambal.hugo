@@ -1,0 +1,45 @@
+{{ define "main" }}
+<main aria-role="main">
+    <header class="homepage-header">
+        <h1>{{.Title}}</h1>
+        {{ with .Params.subtitle }}
+        <span class="subtitle">{{.}}</span>
+        {{ end }}
+    </header>
+    <div class="homepage-content">
+        <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
+        {{.Content}}
+    </div>
+</main>
+
+<section class="previousEvents">
+    <ul class="previousEvents__list">
+        {{ range first 5 (where .Data.Pages "Section" "bal") }}
+        <li class="previousEvents__item">
+         {{ partial "bal/bal_summary.html" (dict "location" "homepage" "heading" 3 "dot" . ) }}
+        </li>
+        {{ end }}
+        <li class="previousEvents__item previousEvents__item--baseline"><div><p>Carambal vous propose des événements depuis 6 ans</p></div></li>
+        {{ if gt (len (where .Data.Pages "Section" "bal")) 5 }}
+            {{   range first 5 (after 5 (where .Data.Pages "Section" "bal")) }}
+            <li class="previousEvents__item">
+                {{ partial "bal/bal_summary.html" (dict "location" "homepage" "heading" 3 "dot" . ) }}
+            </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</section>
+
+
+<aside class="homepage-blog">
+    <h2 class="homepage-blog__title">Les derniers articles</h2>
+    <!-- Note that .Data.Pages is the equivalent of .Site.Pages on the homepage template. -->
+    <ul class="homepage-blog__list">
+        {{ range first 3 (where .Data.Pages "Section" "blog") }}
+        <li class="homepage-blog__item">
+            {{ partial "blog/post_summary.html" (dict "location" "homepage" "heading" 3 "dot" . ) }}
+        </li>
+    {{ end }}
+    </ul>
+</aside>
+{{ end }}

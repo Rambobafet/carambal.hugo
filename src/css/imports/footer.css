@@ -1,0 +1,125 @@
+@import './root.css';
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--redCarambalColor);
+  justify-content: space-between;
+  padding: 20px 40px;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.5;
+
+  & :any-link{
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer_itemWrapper {
+  margin: 0;
+  max-width: 30%;
+}
+
+.footer_mainTitle {
+  flex: 0 1 100%;
+  color: #fff;
+  font-size: 2.4rem;
+  line-height: 2.2;
+}
+
+.footer_subTitle {
+  font-size: 1.8rem;
+  line-height: 2;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d6c0c1;
+  margin: 10px 0;
+
+  &--fullWidth{
+    flex: 0 1 100%;
+  }
+}
+
+.footer_list {
+  list-style: none;
+  padding: 0;
+
+  &--twoColumns{
+    column-count: 2;
+  }
+}
+
+.footer_listItem {
+  position: relative;
+
+  &--article {
+    padding-bottom: 20px;
+  }
+
+  &--article:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    border-bottom: 1px solid #fff;
+    bottom: 10px;
+  }
+}
+
+.footer_link {
+  line-height: 2;
+}
+
+
+.footer_famdt{
+  display: flex;
+  flex-wrap: wrap;
+
+  & p{
+    flex: 1;
+    margin-left: 15px;
+  }
+}
+
+.footer_famdtLogo{
+  display: block;
+  flex-shrink: 0;
+  height: 100%;
+  width: auto;
+  align-self: center;
+
+}
+
+@media (--portraitAndBelow) {
+  .footer_itemWrapper {
+    max-width: 45%;
+
+    &--externalSources {
+      display: none;
+    }
+  }
+
+  .footer_listItem--article:nth-child(n+2)::after{
+    border-bottom: none;
+  }
+
+  .footer_listItem--article:nth-child(n+3){
+    display: none;
+  }
+}
+
+@media (--mobile) {
+  .footer {
+    display: block;
+  }
+
+  .footer_itemWrapper {
+    max-width: none;
+  }
+}
