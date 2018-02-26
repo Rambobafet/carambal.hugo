@@ -13,13 +13,29 @@
     </div>
 </main>
 
+<section class="previousEvents">
+    <ul class="previousEvents__list">
+        {{ range first 5 (where .Data.Pages "Section" "bal") }}
+        <li class="previousEvents__item">
+         {{ partial "bal/bal_summary.html" (dict "location" "homepage" "heading" 3 "dot" . ) }}
+        </li>
+        {{ end }}
+        <li class="previousEvents__item previousEvents__item--baseline"><div><p>Carambal vous propose des événements depuis 6 ans</p></div></li>
+        {{ if gt (len (where .Data.Pages "Section" "bal")) 5 }}
+            {{   range first 5 (after 5 (where .Data.Pages "Section" "bal")) }}
+            <li class="previousEvents__item">
+                {{ partial "bal/bal_summary.html" (dict "location" "homepage" "heading" 3 "dot" . ) }}
+            </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</section>
+
 
 <aside class="homepage-blog">
     <h2 class="homepage-blog__title">Les derniers articles</h2>
     <!-- Note that .Data.Pages is the equivalent of .Site.Pages on the homepage template. -->
     <ul class="homepage-blog__list">
-        {{ $myVar := "test" }}
-
         {{ range first 3 (where .Data.Pages "Section" "blog") }}
         <li class="homepage-blog__item">
             {{ partial "blog/post_summary.html" (dict "location" "homepage" "heading" 3 "dot" . ) }}
