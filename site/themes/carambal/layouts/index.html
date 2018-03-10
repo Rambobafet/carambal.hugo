@@ -13,14 +13,25 @@
     </div>
 </main>
 
-<section class="previousEvents">
+<section class="previousEvents section">
+    <h2 class="previousEvents__mainTitle section__title">
+        (Re-) Découvrir nos événements précédents
+    </h2>
     <ul class="previousEvents__list">
         {{ range first 5 (where .Data.Pages "Section" "bal") }}
         <li class="previousEvents__item">
          {{ partial "bal/bal_summary.html" (dict "location" "homepage" "heading" 3 "dot" . ) }}
         </li>
         {{ end }}
-        <li class="previousEvents__item previousEvents__item--baseline"><div><p>Carambal vous propose des événements depuis 6 ans</p></div></li>
+        <li class="previousEvents__item previousEvents__item--baseline">
+            <div class="previousEventsBaseline">
+                <strong class="previousEventsBaseline__title">Bal folk, stages de danse et de musique,</strong>
+                <p class="previousEventsBaseline__subtitle">Carambal vous propose des événements depuis
+                    {{ sub (int (now.Format "2006")) 2011 }} ans
+                </p>
+                <a href="#" class="previousEventsBaseline__allEvents">Voir les bals par année</a>
+            </div>
+        </li>
         {{ if gt (len (where .Data.Pages "Section" "bal")) 5 }}
             {{   range first 5 (after 5 (where .Data.Pages "Section" "bal")) }}
             <li class="previousEvents__item">

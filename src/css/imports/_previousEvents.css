@@ -3,20 +3,112 @@
 }
 
 .previousEvents__list{
-	display: flex;
-	flex-wrap: wrap;	
+	display: grid;
 	list-style: none;
 	padding: 0;
+	grid-template-columns: repeat(4, minmax(100px, 1fr));
+	grid-template-rows: repeat(3, minmax(100px, 1fr));
 }
 
 .previousEvents__item{
-	flex-grow: 1;
-	flex-basis: 410px;
-	height: 325px;
-	border:1px solid red;
+	min-height: 235px;
 }
 
 .previousEvents__item--baseline{
-	flex-grow: 2;
-	flex-basis: 820px;
+	grid-column: span 2;
+	background: var(--lightRedCarambalColor);
+	color: #fff;
+	display: flex;
+}
+
+.previousEventsBaseline{
+	margin: 30px;
+	padding: 30px;
+	border: 1px solid #fff;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.previousEventsBaseline__title{
+	font-size: 2.5rem;
+	margin: 0;
+}
+
+.previousEventsBaseline__subtitle{
+	margin-bottom: 0;
+}
+
+.previousEventsBaseline__allEvents{
+	text-align: center;
+	display: block;
+	padding: 10px 15px;
+	margin-top: 30px;
+	width: auto;
+	color: #fff;
+	background: var(--redBrown);
+}
+
+.previousEvents__event{
+	background-size: cover;
+	background-color: rebeccapurple;
+	display: grid;
+	grid-template: repeat(3, [row] 1fr) / [col] 1fr;
+	height: 100%;
+}
+
+.previousEvents__link{
+	color: #fff;
+	text-decoration: none;
+
+	&:hover,
+	&:focus{
+		& .previousEvents__details{
+			visibility: visible;
+			opacity: 1;
+		}
+
+		& .previousEvents__cover{
+			opacity: 0;
+		}
+	}
+}
+
+.previousEvents__cover{
+	padding: 10px;
+	grid-column: col 1 / span 2;
+	grid-row: row 3;
+	opacity: 1;
+	background: var(--redCarambalColor);
+}
+
+.previousEvents__cover{
+	opacity: 1;
+	transition: opacity 0.4s;
+}
+
+.previousEvents__details{
+	padding: 15px;
+	grid-column: col 1;
+	grid-row: row 1 / span 3;
+	background: color(var(--FAMDTpurple) alpha(-50%));
+	opacity: 0;
+	margin: 0;
+	visibility: hidden;
+	transition: opacity 0.4s, visibility 0.5s;
+}
+
+.previousEventsDetails__subTitle{
+	margin-bottom: 5px;
+}
+
+.previousEventsDetails__bands{
+	margin: 0 auto 20px;
+}
+
+.previousEventsDetails__more{
+	text-align: center;
+	border: 1px solid #fff;
+	padding: 5px 0 8px;
 }

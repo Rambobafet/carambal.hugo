@@ -1,0 +1,13 @@
+.section__title{
+  text-align: center;
+
+  &::before{
+    width: 40px;
+    border-radius:2px;
+    height: 2px;
+    background: var(--redCarambalColor);
+    content: "";
+    display: block;
+    margin: 15px auto;
+  }
+}

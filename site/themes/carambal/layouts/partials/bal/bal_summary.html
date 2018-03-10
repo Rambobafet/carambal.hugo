@@ -1,10 +1,35 @@
+{{ $subheading := add .heading 1 }}
+{{ $event_date := time .dot.Params.event_info.event_date }}
 
-<article class="previousEvents__event previousEvents__event--{{.location}}">
-	<a class="previousEvents__link" href="{{ .dot.RelPermalink }}">
-		<div class="previousEvents__cover">
-			<h3 class="previousEvents__title">{{ .dot.Title }}</h3>
-			 
-		</div>
-		<p class="previousEvents__details">Plus d'infos</p>
-	</a>
-</article>
+<a class="previousEvents__link previousEvents__link--{{.location}}" href="{{ .dot.RelPermalink }}">
+    <article class="previousEvents__event">
+
+        <div class="previousEvents__cover">
+            <h{{- .heading }} class="previousEvents__title">{{ .dot.Title }}</h{{- .heading -}}>
+        </div>
+        <div class="previousEvents__details">
+            <h{{- $subheading }} class="previousEventsDetails__subTitle">Détails</h{{- $subheading }}>
+
+            <dl>
+                <dt>Date :</dt>
+                <dd>
+                    <time datetime="{{- dateFormat  "2006-01-02T15:04:05Z07:00" $event_date | safeHTML -}}">
+                    {{ $event_date.Day }}
+                    {{ index .dot.Site.Data.locale_fr.mois (printf "%d" $event_date.Month) }}
+                    {{ $event_date.Year }}
+                    </time>
+                </dd>
+
+                <dt>Salle :</dt>
+                <dd>
+                    {{ .dot.Params.event_info.location.name }}
+                </dd>
+            </dl>
+
+            <h{{- $subheading }} class="previousEventsDetails__subTitle">Groupes</h{{- $subheading }}>
+            <p class="previousEventsDetails__bands">{{ delimit .dot.Params.event_info.bands ", " }}</p>
+
+            <p class="previousEventsDetails__more">Voir la fiche complète</p>
+        </div>
+    </article>
+</a>
