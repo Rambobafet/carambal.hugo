@@ -6,7 +6,7 @@
 
         <time class="postSummary__date"
               datetime="{{ .dot.Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-        <span class="postSummary__day">{{ .dot.Date.Day }}</span> {{ index .dot.Site.Data.moisShortened (printf "%d" .dot.Date.Month) }}
+            <span class="postSummary__day">{{ .dot.Date.Day }}</span> {{ index .dot.Site.Data.locale_fr.mois_shortened (printf "%d" .dot.Date.Month) }}
         </time>
 
         <div class="postSummary__content">
